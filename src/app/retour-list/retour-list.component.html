@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Liste des Retours</h2>
+    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description du Livre</th>
+          <th>Nom Complet</th>
+          <th>Date de Retour</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let retour of retours">
+          <td>{{ retour.id }}</td>
+          <td>{{ retour.descriptionLivre }}</td>
+          <td>{{ retour.nomComplet }}</td>
+          <td>{{ retour.dateRetour | date }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="editRetour(retour.id)">Modifier</button>
+            <button class="btn btn-danger" (click)="deleteRetour(retour.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

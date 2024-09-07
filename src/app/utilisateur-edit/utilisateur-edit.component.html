@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Modifier l'utilisateur</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" [(ngModel)]="utilisateur.username" name="username" class="form-control" placeholder="Entrez le nom d'utilisateur">
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" [(ngModel)]="utilisateur.password" name="password" class="form-control" placeholder="Entrez le mot de passe">
+    </div>
+    <div class="form-group">
+      <label for="role">Rôle</label>
+      <select id="role" [(ngModel)]="utilisateur.role" name="role" class="form-control">
+        <option value="USER">USER</option>
+        <option value="ADMIN">ADMIN</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Mettre à jour</button>
+  </form>
+</div>
+

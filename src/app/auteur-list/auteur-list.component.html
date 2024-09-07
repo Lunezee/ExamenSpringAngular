@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 class="text-center">Liste des Auteurs</h2>
+    <button routerLink="/home" class="btn btn-info mx-2">Accueil</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Date de Naissance</th>
+          <th>Nationalité</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let auteur of auteurs">
+          <td>{{ auteur.id }}</td>
+          <td>{{ auteur.nom }}</td>
+          <td>{{ auteur.dateNaissance | date:'yyyy-MM-dd' }}</td>
+          <td>{{ auteur.nationalite }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="updateAuteur(auteur.id)">Éditer</button>
+            <button class="btn btn-danger" (click)="deleteAuteur(auteur.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button class="btn btn-success" (click)="ajouterAuteur()">Ajouter Auteur</button>
+  </div>
+  

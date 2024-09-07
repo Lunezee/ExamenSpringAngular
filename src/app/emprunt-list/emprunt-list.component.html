@@ -1,0 +1,30 @@
+<div class="container">
+  <button routerLink="/home" class="btn btn-info mx-2">Accueil</button>
+  <h2>Liste des Emprunts</h2>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom d'utilisateur</th>
+        <th>Titre du Livre</th>
+        <th>Date d'Emprunt</th>
+        <th>Date de Retour</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emprunt of emprunts">
+        <td>{{ emprunt.id }}</td>
+        <td>{{ emprunt.nomUtilisateur }}</td>
+        <td>{{ emprunt.titreLivre }}</td>
+        <td>{{ emprunt.dateEmprunt | date }}</td>
+        <td>{{ emprunt.dateRetour | date }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editEmprunt(emprunt.id)">Modifier</button>
+          <button class="btn btn-danger" (click)="deleteEmprunt(emprunt.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
